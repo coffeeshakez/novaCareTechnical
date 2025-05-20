@@ -1,19 +1,19 @@
 // Base theme colors
-$color-bg: #ebfff7;
-$color-bg-transparent: #ebfff766;
-$color-bg-secondary: #d6f1e6;
-$color-bg-tertiary: #d6f1e6;
-$color-fg: #041f35;
-$color-fg-secondary: #000;
-$color-heading: #0d5d9a;
-$color-heading2: #0e4066;
-$color-text: #000;
-$color-text-inverted: #fff;
-$color-link: #006565;
-$color-link2: #005656;
-$color-link-inverted: #6bffff;
-$color-link-hover: #0079ad;
-$color-link-hover-inverted: #fff7ca;
+$color-bg: #041f35;
+$color-bg-transparent: #041f3566;
+$color-bg-secondary: #0f2e47;
+$color-bg-tertiary: #0e4066;
+$color-fg: #fffce8;
+$color-fg-secondary: #fffce8;
+$color-heading: #fff7ca;
+$color-heading2: #fffce8;
+$color-text: #fff;
+$color-text-inverted: #000;
+$color-link: #6bffff;
+$color-link2: #6bffff;
+$color-link-inverted: #006565;
+$color-link-hover: #fff7ca;
+$color-link-hover-inverted: #0079ad;
 
 // Logo colors
 $color-logo1: #5db9f4;
@@ -28,8 +28,7 @@ $warning-color: #f6e05e;
 $info-color: #63b3ed;
 
 // Typography
-$font-family:
-  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-family: 'Poppins', sans-serif;
 $font-size-base: 16px;
 $font-size-sm: 14px;
 $font-size-lg: 18px;
@@ -39,6 +38,11 @@ $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 $line-height-base: 1.5;
+
+// Font weights
+$font-weight-base: 400;
+$font-weight-header: 600;
+$font-weight-display: 600;
 
 // Spacing
 $spacing-xs: 4px;

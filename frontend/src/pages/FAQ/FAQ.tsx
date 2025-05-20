@@ -1,6 +1,7 @@
 import { Container, Header, Footer } from "@/components/Layout";
 import styles from "./FAQ.module.scss";
 import { useAccordionData } from "@/hooks";
+import Accordion from "@/components/Accordion";
 
 
 const FAQ = () => {
@@ -14,7 +15,7 @@ const FAQ = () => {
       <main className={styles.main}>
         <Container>
           <div>
-            <h1>FAQ</h1>
+            <Accordion items={accordionItems} />
           </div>
         </Container>
       </main>
