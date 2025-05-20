@@ -1,0 +1,56 @@
+@use '@/styles/base/variables.scss' as *;
+
+.footer {
+  width: 100%;
+  background-color: $color-bg-secondary;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid $color-bg-tertiary;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: $color-fg;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  
+  a {
+    color: $color-fg;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color $transition-speed-fast ease;
+    
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

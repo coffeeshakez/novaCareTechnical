@@ -1,0 +1,17 @@
+@use '@/styles/base/variables.scss' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-bg;
+}
+
+.main {
+  flex: 1;
+  padding: $spacing-md 0;
+}
+
+
+
+
