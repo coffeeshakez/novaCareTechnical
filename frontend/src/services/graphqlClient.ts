@@ -28,7 +28,7 @@ export const client = new ApolloClient({
  */
 export async function executeGraphQLQuery<TData>(
   query: DocumentNode,
-  variables?: Record<string, any>
+  variables?: Record<string, unknown>
 ): Promise<TData> {
   try {
     const { data, error } = await client.query<TData>({

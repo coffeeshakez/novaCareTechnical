@@ -19,7 +19,9 @@ export const Hero = ({ title, text, linkText, linkUrl }: HeroProps) => {
           <p className={styles.heroText}>{text}</p>
           {linkText && linkUrl && (
             <div className={styles.heroActions}>
-              <LinkButton to={linkUrl} variant="outline">{linkText}</LinkButton>
+              <LinkButton to={linkUrl} variant="outline">
+                {linkText}
+              </LinkButton>
             </div>
           )}
         </div>
@@ -27,6 +29,5 @@ export const Hero = ({ title, text, linkText, linkUrl }: HeroProps) => {
     </section>
   );
 };
-
 
 export default Hero;

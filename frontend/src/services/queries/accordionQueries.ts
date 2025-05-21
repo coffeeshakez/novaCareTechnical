@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import type { AccordionItem } from '@/types/AccordionItem';
 import { executeGraphQLQuery } from '../graphqlClient';
-import { mapAccordionResponseToItems, type AccordionQueryResult } from '@/utils/mappers/mappers';   
+import { mapAccordionResponseToItems, type AccordionQueryResult } from '@/utils/mappers/mappers';
 
 export const ACCORDION_ITEMS_QUERY = gql`
   query GetFaqItems {

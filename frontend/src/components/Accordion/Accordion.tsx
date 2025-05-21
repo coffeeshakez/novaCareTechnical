@@ -10,48 +10,48 @@ type AccordionProps = {
 
 export const Accordion = ({ items, className = '' }: AccordionProps) => {
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
-  
+
   if (!items || items.length === 0) {
     return null;
   }
-  
+
   const toggleItem = (id: string) => {
     setOpenItems(prev => ({
       ...prev,
-      [id]: !prev[id]
+      [id]: !prev[id],
     }));
   };
 
   return (
     <div className={`${styles.accordion} ${className}`}>
-      {items.map((item) => {
+      {items.map(item => {
         const isOpen = openItems[item.id] || false;
-        
+
         return (
-          <details 
-            key={item.id} 
+          <details
+            key={item.id}
             className={styles.item}
             id={`accordion-item-${item.id}`}
             open={isOpen}
           >
-            <summary 
+            <summary
               className={styles.summary}
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 toggleItem(item.id);
               }}
             >
               <span className={styles.title}>{item.question}</span>
               <span className={styles.icon}>
-                {isOpen ? 
-                  <IoIosArrowUp color="#0ba7eb" size={20} /> : 
-                  <IoIosArrowDown color="#0d5d9a" size={20} />}
+                {isOpen ? (
+                  <IoIosArrowUp color="#0ba7eb" size={20} />
+                ) : (
+                  <IoIosArrowDown color="#0d5d9a" size={20} />
+                )}
               </span>
             </summary>
             <div className={styles.content}>
-              <div className={styles.contentInner}>
-                {item.answer}
-              </div>
+              <div className={styles.contentInner}>{item.answer}</div>
             </div>
           </details>
         );

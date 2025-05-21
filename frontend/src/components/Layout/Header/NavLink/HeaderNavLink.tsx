@@ -9,7 +9,7 @@ interface HeaderNavLinkProps {
 
 export const HeaderNavLink = ({ to, children, isActive = false }: HeaderNavLinkProps) => {
   const linkClasses = `${styles.navLink} ${isActive ? styles.active : ''}`;
-  
+
   return (
     <Link to={to} className={linkClasses}>
       {children}

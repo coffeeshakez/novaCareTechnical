@@ -30,14 +30,9 @@ export const Button = ({
   onClick,
 }: ButtonProps) => {
   const buttonClass = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
-  
+
   return (
-    <button
-      className={buttonClass}
-      disabled={disabled}
-      type={type}
-      onClick={onClick}
-    >
+    <button className={buttonClass} disabled={disabled} type={type} onClick={onClick}>
       {children}
     </button>
   );
@@ -53,14 +48,13 @@ export const LinkButton = ({
   onClick,
 }: LinkButtonProps) => {
   const buttonClass = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
-  
+
   if (external) {
     // For accessibility, provide context that the link opens in a new tab
-    const ariaLabel = typeof children === 'string' ? 
-      `${children} (opens in a new tab)` : undefined;
-    
+    const ariaLabel = typeof children === 'string' ? `${children} (opens in a new tab)` : undefined;
+
     return (
-      <a 
+      <a
         href={to}
         className={buttonClass}
         target="_blank"
@@ -72,13 +66,9 @@ export const LinkButton = ({
       </a>
     );
   }
-  
+
   return (
-    <Link
-      to={to}
-      className={buttonClass}
-      onClick={onClick}
-    >
+    <Link to={to} className={buttonClass} onClick={onClick}>
       {children}
     </Link>
   );

@@ -1,8 +1,7 @@
-import { Container, PageContainer } from "@/components/Layout";
-import styles from "./FAQ.module.scss";
-import { useAccordionData } from "@/hooks";
-import Accordion from "@/components/Accordion";
-
+import { Container, PageContainer } from '@/components/Layout';
+import styles from './FAQ.module.scss';
+import { useAccordionData } from '@/hooks';
+import Accordion from '@/components/Accordion';
 
 const FAQ = () => {
   const { accordionItems, isLoading, error } = useAccordionData();

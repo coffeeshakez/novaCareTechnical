@@ -9,7 +9,7 @@ export const Header = () => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink} aria-label="NovaCare Home">
-            <NovaCareIcon className={styles.logoSvg}/>
+            <NovaCareIcon className={styles.logoSvg} />
           </Link>
         </div>
         <nav className={styles.navigation}>

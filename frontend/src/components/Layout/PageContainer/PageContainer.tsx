@@ -11,9 +11,7 @@ export const PageContainer = ({ children, className = '' }: PageContainerProps) 
   return (
     <div className={`${styles.pageContainer} ${className}`}>
       <Header />
-      <main className={styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   );

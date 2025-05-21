@@ -14,7 +14,7 @@
   outline: none;
   position: relative;
   overflow: hidden;
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -43,13 +43,14 @@
   background-color: $color-logo3;
   color: $color-fg;
   box-shadow: $shadow-md;
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     background-color: darken($color-logo3, 5%);
     transform: translateY(-2px);
     box-shadow: $shadow-lg;
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -60,13 +61,14 @@
   color: $color-link;
   backdrop-filter: blur(5px);
   box-shadow: $shadow-sm;
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     background-color: rgba(107, 255, 255, 0.25);
     transform: translateY(-2px);
     box-shadow: $shadow-md;
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -78,7 +80,7 @@
   border: 2px solid $color-link;
   position: relative;
   z-index: 1;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -90,10 +92,11 @@
     transition: width $transition-speed-normal ease;
     z-index: -1;
   }
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     color: $color-bg;
-    
+
     &::before {
       width: 100%;
     }
@@ -106,7 +109,7 @@
   padding-left: 0;
   padding-right: 0;
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -117,8 +120,9 @@
     background-color: $color-link;
     transition: width $transition-speed-normal ease;
   }
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     &::after {
       width: 100%;
     }

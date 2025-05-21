@@ -14,7 +14,7 @@
   background-color: $color-bg;
   overflow: hidden;
   transition: all $transition-speed-normal ease;
-  
+
   &:last-child {
     border-bottom: none;
   }
@@ -28,16 +28,16 @@
   list-style: none;
   position: relative;
   transition: all $transition-speed-normal ease;
-  
+
   &::-webkit-details-marker {
     display: none;
   }
-  
+
   &:focus {
     outline: 2px solid $color-link;
     outline-offset: -2px;
   }
-  
+
   &:hover {
     background-color: $color-bg-tertiary;
   }
@@ -50,7 +50,7 @@
   font-weight: $font-weight-medium;
   color: $color-link;
   transition: color $transition-speed-normal ease;
-  
+
   .summary:hover & {
     color: $color-link-hover;
   }
@@ -62,7 +62,7 @@
   align-items: center;
   justify-content: center;
   transition: all $transition-speed-normal ease;
-  
+
   details[open] & {
     transform: rotate(0deg);
   }
@@ -86,14 +86,16 @@
   .summary {
     outline: 1px solid transparent;
   }
-  
+
   .item {
     border: 2px solid CanvasText;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .item, .summary, .content {
+  .item,
+  .summary,
+  .content {
     transition: none;
   }
 }
