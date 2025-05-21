@@ -1,0 +1,27 @@
+@use '@/styles/base/variables.scss' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-lg;
+  width: 100%;
+}
+
+.spinner {
+  color: $color-link;
+  font-size: 24px;
+  animation: spin $transition-speed-normal linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text {
+  margin-left: $spacing-md;
+  color: $color-fg;
+  font-weight: $font-weight-medium;
+}

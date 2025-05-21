@@ -13,6 +13,15 @@
   margin: 0 auto 3rem;
 }
 
+.noItems {
+  text-align: center;
+  color: $color-fg;
+  padding: $spacing-xl;
+  border: 1px dashed rgba($color-link, 0.3);
+  border-radius: $border-radius-md;
+  background-color: rgba($color-bg-secondary, 0.3);
+}
+
 @media (max-width: $breakpoint-md) {
   .title {
     font-size: 2rem;

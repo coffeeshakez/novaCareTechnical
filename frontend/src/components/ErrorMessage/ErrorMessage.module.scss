@@ -1,0 +1,45 @@
+@use '@/styles/base/variables.scss' as *;
+
+.container {
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  background-color: rgba($error-color, 0.05);
+  border: 1px solid rgba($error-color, 0.2);
+  margin: $spacing-md 0;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  color: $error-color;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.icon {
+  margin-right: $spacing-sm;
+  color: $error-color;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.message {
+  color: $color-fg;
+  margin: 0;
+}
+
+.retry {
+  background: none;
+  border: none;
+  color: $color-link;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  padding: $spacing-sm 0;
+  transition: color $transition-speed-fast ease;
+  margin-top: $spacing-md;
+  
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
