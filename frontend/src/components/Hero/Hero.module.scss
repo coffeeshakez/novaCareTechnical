@@ -6,6 +6,19 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(120deg, $color-bg-secondary, $color-bg-tertiary);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba($color-logo3, 0.4) 0%, transparent 30%),
+      radial-gradient(circle at 80% 80%, rgba($color-logo2, 0.3) 0%, transparent 40%);
+    z-index: 0;
+  }
 }
 
 .heroContent {
@@ -15,6 +28,8 @@
   display: flex;
   align-items: center;
   min-height: inherit;
+  position: relative;
+  z-index: 1;
 }
 
 .heroLeft {
@@ -32,36 +47,38 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(107, 255, 255, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba($color-link, 0.2), transparent 70%);
   top: -100px;
   left: -100px;
   z-index: 0;
+  animation: pulse $transition-speed-slow ease-in-out infinite alternate;
+  
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.2;
+    }
+    to {
+      transform: scale(1.1);
+      opacity: 0.3;
+    }
+  }
 }
 
-.heroLeft::after {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(18, 79, 126, 0.5), transparent 70%);
-  bottom: -50px;
-  right: -50px;
-  z-index: 0;
-}
 
 .heroRight {
   flex: 1.2;
   padding: 2rem;
   position: relative;
   z-index: 1;
-  background: linear-gradient(120deg, rgba(13, 93, 154, 0.3), rgba(11, 167, 235, 0.1));
+  background: linear-gradient(120deg, rgba($color-logo3, 0.3), rgba($color-logo2, 0.1));
   backdrop-filter: blur(5px);
-  border-left: 1px solid rgba(107, 255, 255, 0.2);
+  border-left: 1px solid rgba($color-link, 0.2);
   min-height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: inset 0 0 40px rgba($color-link, 0.05);
 }
 
 .heroTitle {
@@ -77,6 +94,36 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: glowTitle $transition-speed-slow ease-in-out infinite alternate;
+  
+  @keyframes glowTitle {
+    from {
+      text-shadow: 0 0 5px rgba($color-link, 0.2), 0 0 20px rgba($color-link, 0.1);
+    }
+    to {
+      text-shadow: 0 0 10px rgba($color-link, 0.4), 0 0 30px rgba($color-link, 0.2);
+    }
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, transparent, $color-link, transparent);
+    opacity: 0.6;
+    border-radius: $border-radius-full;
+    transform: scaleX(0.7);
+    filter: blur(2px);
+    animation: lineGlow 3s $transition-speed-normal infinite alternate;
+  }
+  
+  @keyframes lineGlow {
+    0% { opacity: 0.3; transform: scaleX(0.7); }
+    100% { opacity: 0.7; transform: scaleX(0.9); }
+  }
 }
 
 .heroText {
@@ -87,14 +134,11 @@
   color: $color-fg;
   position: relative;
   z-index: 1;
-}
-
-.heroActions {
-  display: flex;
-  gap: 1rem;
-  position: relative;
-  z-index: 1;
-  justify-content: flex-start;
+  
+  & strong {
+    color: $color-link;
+    font-weight: $font-weight-bold;
+  }
 }
 
 
@@ -112,7 +156,7 @@
     width: 100%;
     padding: 2rem 1rem 3rem;
     border-left: none;
-    border-top: 1px solid rgba(107, 255, 255, 0.2);
+    border-top: 1px solid rgba($color-link, 0.2);
   }
   
   .heroTitle {

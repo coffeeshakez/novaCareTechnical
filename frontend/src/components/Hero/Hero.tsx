@@ -1,4 +1,3 @@
-
 import { LinkButton } from '@/components/UI';
 import styles from './Hero.module.scss';
 
@@ -28,5 +27,6 @@ export const Hero = ({ title, text, linkText, linkUrl }: HeroProps) => {
     </section>
   );
 };
+
 
 export default Hero;
