@@ -1,30 +1,24 @@
-import { useState, useEffect } from 'react';
-import { getAccordionData } from '@/services/queries/accordionQueries';
-import type { AccordionItem } from '@/types/AccordionItem';
+import { useQuery } from '@apollo/client';
+import { useMemo } from 'react';
+import { ACCORDION_ITEMS_QUERY } from '@/services/queries/accordionQueries';
+import { mapAccordionResponseToItems, type AccordionQueryResult } from '@/utils/mappers/mappers';
 
 export const useAccordionData = () => {
-  const [accordionItems, setAccordionItems] = useState<AccordionItem[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const { data, loading, error } = useQuery<AccordionQueryResult>(ACCORDION_ITEMS_QUERY, {
+    fetchPolicy: 'cache-first',
+    nextFetchPolicy: 'cache-and-network',
+  });
+  
+  const accordionItems = useMemo(() => {
+    if (!data) return [];
+    return mapAccordionResponseToItems(data);
+  }, [data]);
 
-  useEffect(() => {
-    const fetchAccordionData = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
+  const errorMessage = error ? 'Failed to load Q&A data. Please try again later.' : null;
 
-        const data = await getAccordionData();
-        setAccordionItems(data);
-      } catch (err) {
-        setError('Failed to load Q&A data. Please try again later.');
-        console.error('Error in useAccordionData hook:', err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchAccordionData();
-  }, []);
-
-  return { accordionItems, isLoading, error };
+  return { 
+    accordionItems, 
+    isLoading: loading, 
+    error: errorMessage 
+  };
 };
