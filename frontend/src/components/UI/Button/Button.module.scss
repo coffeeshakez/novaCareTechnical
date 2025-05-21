@@ -1,0 +1,126 @@
+@use '@/styles/base/variables.scss' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-md;
+  text-decoration: none;
+  transition: all $transition-speed-normal ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Size variants
+.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+// Style variants
+.primary {
+  background-color: $color-logo3;
+  color: $color-fg;
+  box-shadow: $shadow-md;
+  
+  &:hover, &:focus {
+    background-color: darken($color-logo3, 5%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.secondary {
+  background-color: rgba(107, 255, 255, 0.15);
+  color: $color-link;
+  backdrop-filter: blur(5px);
+  box-shadow: $shadow-sm;
+  
+  &:hover, &:focus {
+    background-color: rgba(107, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: $color-link;
+  border: 2px solid $color-link;
+  position: relative;
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $color-link;
+    transition: width $transition-speed-normal ease;
+    z-index: -1;
+  }
+  
+  &:hover, &:focus {
+    color: $color-bg;
+    
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+.text {
+  background-color: transparent;
+  color: $color-link;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-link;
+    transition: width $transition-speed-normal ease;
+  }
+  
+  &:hover, &:focus {
+    &::after {
+      width: 100%;
+    }
+  }
+}

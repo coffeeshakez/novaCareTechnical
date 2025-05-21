@@ -1,17 +1,28 @@
 @use '@/styles/base/variables.scss' as *;
 
-.page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: $color-bg;
+.title {
+  color: $color-heading;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+  font-weight: $font-weight-bold;
 }
 
-.main {
-  flex: 1;
-  padding: $spacing-md 0;
+.accordionWrapper {
+  max-width: 800px;
+  margin: 0 auto 3rem;
 }
 
+@media (max-width: $breakpoint-md) {
+  .title {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+}
 
-
-
+@media (max-width: $breakpoint-sm) {
+  .title {
+    font-size: 1.75rem;
+    margin: 1.25rem 0;
+  }
+}

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { NovaCareIcon } from './NovaCareIcon';
+import { HeaderNavLink } from './NavLink/HeaderNavLink';
 
 export const Header = () => {
   return (
@@ -12,7 +13,7 @@ export const Header = () => {
           </Link>
         </div>
         <nav className={styles.navigation}>
-          <Link to="/faq" className={styles.navLink}>/ FAQ</Link>
+          <HeaderNavLink to="/faq">/ FAQ</HeaderNavLink>
         </nav>
       </div>
     </header>

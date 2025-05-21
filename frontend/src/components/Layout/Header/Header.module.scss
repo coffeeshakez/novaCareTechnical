@@ -37,45 +37,6 @@
   align-items: center;
 }
 
-.navLink {
-  color: $color-link;
-  text-decoration: none;
-  font-weight: $font-weight-medium;
-  padding: 0.5rem 1rem;
-  margin: 0 $spacing-md;
-  font-family: $font-family;
-  font-size: $font-size-base;
-  position: relative;
-  transition: all $transition-speed-normal ease;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: $color-link-hover;
-    transition: width $transition-speed-normal ease;
-  }
-  
-  &:hover {
-    color: $color-link-hover;
-    
-    &:after {
-      width: 100%;
-    }
-  }
-}
-
-.navLink.active {
-  color: $color-link-hover;
-  
-  &:after {
-    width: 100%;
-  }
-}
-
 @media (max-width: 576px) {
   .container {
     flex-direction: column;

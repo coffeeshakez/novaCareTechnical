@@ -1,4 +1,4 @@
-import { Container, Header, Footer } from "@/components/Layout";
+import { Container, PageContainer } from "@/components/Layout";
 import styles from "./FAQ.module.scss";
 import { useAccordionData } from "@/hooks";
 import Accordion from "@/components/Accordion";
@@ -9,18 +9,14 @@ const FAQ = () => {
   console.log(accordionItems, isLoading, error);
 
   return (
-    <div className={styles.page}>
-      <Header />
-      
-      <main className={styles.main}>
-        <Container>
-          <div>
-            <Accordion items={accordionItems} />
-          </div>
-        </Container>
-      </main>
-      <Footer />
-    </div>
+    <PageContainer>
+      <Container>
+        <h1 className={styles.title}>Frequently Asked Questions</h1>
+        <div className={styles.accordionWrapper}>
+          <Accordion items={accordionItems} />
+        </div>
+      </Container>
+    </PageContainer>
   );
 };
 
