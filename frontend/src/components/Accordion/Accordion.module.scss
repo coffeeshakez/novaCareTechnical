@@ -39,7 +39,7 @@
   }
   
   &:hover {
-    background-color: darken($color-bg-tertiary, 5%);
+    background-color: $color-bg-tertiary;
   }
 }
 
