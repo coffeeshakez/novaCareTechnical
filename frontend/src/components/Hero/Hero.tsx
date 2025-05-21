@@ -1,4 +1,4 @@
-import { LinkButton } from '@/components/UI';
+import { LinkButton } from '@/components/Button';
 import styles from './Hero.module.scss';
 
 interface HeroProps {
