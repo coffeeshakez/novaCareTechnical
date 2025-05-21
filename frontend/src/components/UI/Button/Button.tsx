@@ -55,6 +55,10 @@ export const LinkButton = ({
   const buttonClass = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
   
   if (external) {
+    // For accessibility, provide context that the link opens in a new tab
+    const ariaLabel = typeof children === 'string' ? 
+      `${children} (opens in a new tab)` : undefined;
+    
     return (
       <a 
         href={to}
@@ -62,6 +66,7 @@ export const LinkButton = ({
         target="_blank"
         rel="noopener noreferrer"
         onClick={onClick}
+        aria-label={ariaLabel}
       >
         {children}
       </a>
