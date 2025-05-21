@@ -12,7 +12,7 @@ export const Header = () => {
           </Link>
         </div>
         <nav className={styles.navigation}>
-          <Link to="/faq" className={styles.navLink}>FAQ</Link>
+          <Link to="/faq" className={styles.navLink}>/ FAQ</Link>
         </nav>
       </div>
     </header>
